@@ -1,61 +1,47 @@
 <template>
   <div>
-    <div class="container min-h-screen mx-auto">
-      <div>
-        <h1 class="text-5xl w-full text-center mt-10">Meet The Team</h1>
+    <div class="lg:container  mx-auto text-primary-darkest">
+      <div class="lg:mt-4">
+        <h1 class="text-5xl w-full text-center xl:text-7xl xl:mb-10">
+          Meet Our Team
+        </h1>
       </div>
-      <div
-        class="grid grid-rows-4 mt-14 gap-y-8 lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-28 gap-x-10 "
-      >
-        <div
-          class="grid grid-rows-2 grid-cols-2 w-full md:col-span-5 lg:col-span-1 lg:grid-rows-2 lg:grid-cols-5  rounded-xl "
+
+      <div class="grid grid-cols-2 pt-4 mb-10 ">
+        <base-card
+          class="grid grid-rows-5 col-span-2 md:col-span-1  shadow-xl h-80 bg-White my-3 mx-4 rounded-xl lg:grid-cols-2 "
           v-for="(member, index) in team"
           :key="index"
         >
           <div
-            class="flex items-center bg-Contrast-dark self-center justify-self-center h-28 w-28 md:h-40 md:w-40 rounded-full row-span-2 col-span-1 lg:h-56 lg:w-56 lg:rounded-xl lg:justify-self-start lg:row-span-2 lg:col-span-2 "
+            class="flex items-center row-span-3 bg-primary-darkest self-center justify-self-center h-40 w-40 lg:h-52 lg:w-52 lg:mt-4 rounded-full lg:row-span-5"
           >
             <img :src="'/static/Images/GB_Homes_Reverse.png'" />
           </div>
           <h1
-            class=" text-3xl self-center  justify-self-start md:text-5xl row-span-1 md:-ml-10 lg:-ml-0 lg:text-7xl lg:col-span-3"
+            class=" text-3xl lg:text-5xl text-center pt-2 h-10 lg:col-start-2 lg:row-start-3"
           >
             {{ member.name }}
           </h1>
           <h4
-            class=" text-lg md:text-2xl self-center justify-self-start row-span-1 md:-ml-10 lg:-ml-0 lg:text-4xl lg:col-span-3"
+            class="text-xl lg:text-3xl text-center text-primary content-start lg:col-start-2 lg:row-start-4 lg:pr-3"
           >
             {{ member.title }}
           </h4>
-        </div>
+        </base-card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import BaseCard from "../components/UI/BaseCard.vue";
 export default {
-  data() {
-    return {
-      team: [
-        {
-          name: "Aaron Witt",
-          title: "Founder/ Co-Owner"
-        },
-        {
-          name: "Bilal Powell",
-          title: "Co-Owner"
-        },
-        {
-          name: "Kelsey Witt",
-          title: '"New Home" Consultant / Designer'
-        },
-        {
-          name: "Jessi Powell",
-          title: '"New Home" Consultant / Designer'
-        }
-      ]
-    };
+  components: { BaseCard },
+  computed: {
+    team: function() {
+      return this.$store.state.bios.bios.map(bio => bio);
+    }
   }
 };
 </script>

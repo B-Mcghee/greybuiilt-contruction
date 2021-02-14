@@ -1,6 +1,6 @@
 <template>
   <div
-    class="home-image text-Contrast-dark container my-10 mx-auto text-center"
+    class="home-image text-Contrast-dark container mb-10 mx-auto text-center"
   >
     <div>
       <h1 class="title line-title text-7xl text-Contrast-dark">
@@ -17,7 +17,7 @@
     </div>
     <hr class="border-1 border-Contrast-dark w-5/6 mx-auto mb-10" />
     <div class="md:mx-10">
-      <p class=" text-base text-l md:text-3xl mb-8 px-8 mx-4">
+      <p class=" text-base text-l md:text-3xl mt0 mb-8 px-8 mx-4">
         We're so sorry, at the moment our website is also under construction.
         Enter your email and we will let you know when to come back and visit
         us!

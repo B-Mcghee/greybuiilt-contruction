@@ -1,37 +1,40 @@
 <template>
-  <nav class="bg-primary w-full h-12 max-h-14 ">
+  <nav
+    class="bg-primary min-w-full h-12 lg:h-14 xl:justify-end xl:flex fixed top-0 left-0 right-0 z-10 "
+  >
     <figure
-      class="image-logo z-10 absolute mt-2 lg:mt-0 ml-1 lg:top-2 lg:left-1 cursor-pointer lg:mr-10 "
+      class=" left-1 top-2 absolute mr-2 z-20 cursor-pointer xl:left-1"
       @click="toggleNav"
     >
-      <img class="w-16" :src="'/static/Images/GB_Homes_Reverse.png'" alt="" />
+      <img class=" w-16" :src="'/static/Images/GB_Homes_Reverse.png'" alt="" />
     </figure>
     <ul
-      class="bg-primary h-full flex flex-col-reverse  fixed 
-      lg:flex-row lg:relative md:text-2xl lg:justify-end"
+      class="bg-primary flex items-center fixed flex-col-reverse w-44 -left-44 xl:left-0  h-full justify-start
+      xl:flex xl:relative xl:justify-end xl:flex-row xl:w-1/2 "
       ref="nav"
     >
       <li
         v-for="(link, index) in navLinks"
         :key="index"
-        class="white flex w-full lg:w-40 lg:items-center lg:justify-center my-1 lg:relative cursor-pointer "
+        class=" justify-end w-full mb-2.5 xl:mb-0"
         ref="pill"
       >
         <router-link
           :style="{ color: [linkColor, '#FFF'] }"
-          tag="div"
           :to="link.path"
-          class="flex w-full justify-between lg:inline-block lg:flex-row-reverse lg:justify-center lg:items-center items-center"
-          ><span
-            @click="navToggle"
-            class="mx-3 hover:bg-primary-light rounded-lg p-1"
-            >{{ link.text }}</span
-          ><i @click="navToggle" class="mr-2 lg:hidden" :class="link.icon"
-        /></router-link>
+          role="a"
+          ><a
+            class="flex flex-row justify-between mb-1.5 mr-1 text-xl xl:flex-row-reverse xl:justify-center xl:items-center xl:text-4xl"
+            ><span @click="navToggle" class="pl-2">{{ link.text }}</span
+            ><i
+              @click="navToggle"
+              class=" text-xl xl:hidden"
+              :class="link.icon"/></a
+        ></router-link>
       </li>
     </ul>
     <div
-      class=" right-3 bottom-3 py-1 px-2 text-3xl rounded-xl fixed text-White cursor-pointer bg-primary "
+      class="toggle right-5 bottom-5 py-1 xl:hidden px-2 text-3xl rounded-xl fixed text-White cursor-pointer bg-primary"
       @click="toggleNav"
     >
       <i class="fas fa-bars"></i>
@@ -52,12 +55,12 @@ export default {
     toggleNav() {
       const nav = this.$refs.nav.classList;
       nav.contains("active") ? nav.remove("active") : nav.add("active");
+      console.log("active");
     },
     navToggle() {
       const nav = this.$refs.nav.classList;
-      if (nav.contains("active")) {
-        nav.remove("active");
-      }
+
+      nav.remove("active");
     },
     toggleBackground() {
       const pill = this.$refs.pill.classList;
@@ -72,26 +75,31 @@ export default {
 <style>
 @media screen and (max-width: 1024px) {
   ul {
-    width: 240px;
+    /* width: 250px;
 
-    left: -200px;
-    transition: 500ms ease all;
+    left: -200px; */
+    transition: 400ms ease all;
+  }
+  .active {
+    left: 0px;
+  }
+  i {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 500px) {
+  ul {
+    /* width: 175px;
+
+    left: -175px; */
+    transition: 400ms ease-in;
   }
 
   .active {
     left: 0px;
   }
 }
-@media screen and (max-width: 500px) {
-  ul {
-    width: 175px;
-
-    left: -175px;
-    transition: 500ms ease all;
-  }
-
-  .active {
-    left: 0px;
-  }
+i {
+  font-size: 1em;
 }
 </style>
