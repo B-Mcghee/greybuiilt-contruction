@@ -83,6 +83,88 @@ const state = {
           ],
           sq_footage:'2,456',
           showProject: true
+        },
+        {
+          id: 6,
+          title: "Corydon",
+          description:
+            "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+          cover_image: "/static/Images/side.jpg",
+          images: [
+            "/static/Images/kelsey_jessie.JPG",
+            "/static/Images/side.jpg",
+            "/static/Images/aaron_bilal.JPG",
+            "/static/Images/sidewalk.jpg",
+            "/static/Images/kelsey_jessie.JPG",
+            "/static/Images/kelsey_jessie.JPG",
+            "/static/Images/sidewalk.jpg"
+          ],
+          sq_footage:'1,456',
+          showProject: true
+        },
+        {
+          id: 7,
+          title: "Louisville",
+          description:
+            "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+          cover_image: "/static/Images/kelsey_jessie.JPG",
+          images: [
+            "/static/Images/sidewalk.jpg",
+            "/static/Images/kelsey_jessie.JPG",
+            "/static/Images/kelsey_jessie.JPG",
+            "/static/Images/side.jpg",
+            "/static/Images/aaron_bilal.JPG",
+          ],
+          sq_footage:'1,956',
+          showProject: true
+        },
+        {
+          id: 8,
+          title: "Sellersburg",
+          description:
+            "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+          cover_image: "/static/Images/aaron_bilal.JPG",
+          images: [
+            "/static/Images/kelsey_jessie.JPG",
+            "/static/Images/side.jpg",
+            "/static/Images/aaron_bilal.JPG",
+          ],
+          sq_footage:'3,456',
+          showProject: true
+        },
+        {
+          id: 9,
+          title: "Louisville",
+          description:
+            "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+          cover_image: "static/Images/side.jpg",
+          images: [
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg"
+          ],
+          sq_footage:'2,056',
+          showProject: true
+        },
+        {
+          id: 10,
+          title: "Sellersburg",
+          description:
+            "This project holds dear to Greybuilt, because it was the first opportunity someone trusted us in building their dream home and they love it",
+          cover_image: "/static/Images/sidewalk.jpg",
+          images: [
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg",
+            "static/Images/side.jpg"
+          ],
+          sq_footage:'2,456',
+          showProject: true
         }
       ]
 }

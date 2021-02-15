@@ -1,12 +1,16 @@
 <template>
-  <div>
-    <h1 class="text-3xl text-center py-4">Add New Project</h1>
-    <div class="py-4 mb-8">
-      <form action="" class="px-4 lg:px-20 xl:max-w-3/4">
-        <div class="shadow sm:rounded-md sm:overflow-hidden">
-          <div class="px-4 py-5 bg-White space-y-6 sm:p-6">
-            <div class="grid grid-cols-6 gap-6">
-              <div class="col-span-6 sm:col-span-3">
+  <div class="relative">
+    <h1
+      class="text-3xl text-center py-1 sticky inset-0 bg-White-ghost text-primary-dark"
+    >
+      Add New Project
+    </h1>
+    <div class="py-2 mb-8">
+      <form action="" class="px-6 lg:px-20 sm:w-10/12 mx-auto">
+        <div class="shadow-xl sm:rounded-md sm:overflow-hidden">
+          <div class="px-4 py-5 bg-White-powder space-y-6 sm:p-6">
+            <div class="grid grid-cols-6 gap-6 sm:w-9/12 sm:mx-auto">
+              <div class="col-span-6">
                 <label
                   for="title"
                   class="block text-sm font-medium text-primary"
@@ -21,7 +25,7 @@
                   v-model="project.title"
                 />
               </div>
-              <div class="col-span-6 sm:col-span-3">
+              <div class="col-span-6">
                 <label
                   for="sq-footage"
                   class="block text-sm font-medium text-primary"
@@ -36,7 +40,7 @@
                   v-model="project.sqFootage"
                 />
               </div>
-              <div class="col-span-6 sm:col-span-3">
+              <div class="col-span-6">
                 <label
                   for="description"
                   class="block text-sm font-medium text-primary"
@@ -57,7 +61,7 @@
                   class="block text-sm font-medium text-primary"
                   >Images</label
                 >
-                <div class="flex space-x-1.5 pt-4">
+                <div class="flex space-x-1.5 pt-2">
                   <div v-for="(image, index) in project.images" :key="index">
                     <img :src="image" alt="" class="h-10" />
                   </div>
@@ -69,46 +73,26 @@
                   class="block text-sm font-medium text-primary"
                   >Cover Image</label
                 >
-                <div class="flex space-x-1.5 pt-4">
+                <div class="flex space-x-1.5 pt-2">
                   <img :src="project.cover_image" alt="" class="h-10" />
                 </div>
               </div>
 
-              <div>
-                <input
-                  type="file"
-                  @change="onFileSelected"
-                  id="image"
-                  style="display: none"
-                  class="mt-1 bg-White-ghost block w-full shadow-sm sm:text-sm border-primary-light rounded-md lg:py-2 lg:text-lg"
-                  ref="fileInput"
-                />
-              </div>
-              <div>
-                <input
-                  type="file"
-                  @change="coverImage"
-                  id="image"
-                  style="display: none"
-                  class="mt-1 bg-White-ghost block w-full shadow-sm sm:text-sm border-primary-light rounded-md lg:py-2 lg:text-lg"
-                  ref="coverImage"
-                />
-              </div>
-              <div class="flex space-x-4 col-span-6">
+              <div class="grid grid-cols-12 space-x-2 col-span-6 text-White">
                 <button
-                  class="bg-primary px-4 py2 rounded-md"
+                  class="bg-primary rounded-md col-span-4 py-0.5"
                   @click="$refs.coverImage.click()"
                 >
                   Cover Image
                 </button>
                 <button
-                  class="bg-primary px-4 py2 rounded-md"
+                  class="bg-primary rounded-md col-span-4"
                   @click="$refs.fileInput.click()"
                 >
                   Project Images
                 </button>
                 <button
-                  class="bg-primary px-4 py2 rounded-md"
+                  class="bg-primary rounded-md col-span-4"
                   @click="onUpload"
                 >
                   Upload
@@ -118,6 +102,26 @@
           </div>
         </div>
       </form>
+      <div>
+        <input
+          type="file"
+          @change="onFileSelected"
+          id="image"
+          style="display: none"
+          class="mt-1 bg-White-ghost block w-full shadow-sm sm:text-sm border-primary-light rounded-md lg:py-2 lg:text-lg"
+          ref="fileInput"
+        />
+      </div>
+      <div>
+        <input
+          type="file"
+          @change="coverImage"
+          id="image"
+          style="display: none"
+          class="mt-1 bg-White-ghost block w-full shadow-sm sm:text-sm border-primary-light rounded-md lg:py-2 lg:text-lg"
+          ref="coverImage"
+        />
+      </div>
       <!-- <div v-if="project.showProject">
         <h1>{{ project.title }}</h1>
         <h5>{{ project.sqFootage }}</h5>

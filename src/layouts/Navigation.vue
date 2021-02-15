@@ -1,22 +1,21 @@
 <template>
   <nav
-    class="bg-primary min-w-full h-12 lg:h-14 xl:justify-end xl:flex fixed top-0 left-0 right-0 z-10 "
+    class="bg-primary min-w-full h-12 lg:h-14 xl:justify-end xl:flex fixed top-0 left-0 right-0 z-40"
   >
     <figure
-      class=" left-1 top-2 absolute mr-2 z-20 cursor-pointer xl:left-1"
+      class="left-1 top-2 absolute mr-2 z-50 cursor-pointer xl:left-1"
       @click="toggleNav"
     >
-      <img class=" w-16" :src="'/static/Images/GB_Homes_Reverse.png'" alt="" />
+      <img class="w-16" :src="'/static/Images/GB_Homes_Reverse.png'" alt="" />
     </figure>
     <ul
-      class="bg-primary flex items-center fixed flex-col-reverse w-44 -left-44 xl:left-0  h-full justify-start
-      xl:flex xl:relative xl:justify-end xl:flex-row xl:w-1/2 "
+      class="bg-primary flex items-center fixed flex-col-reverse w-44 -left-44 xl:left-0 h-full justify-start xl:flex xl:relative xl:justify-end xl:flex-row xl:w-1/2"
       ref="nav"
     >
       <li
         v-for="(link, index) in navLinks"
         :key="index"
-        class=" justify-end w-full mb-2.5 xl:mb-0"
+        class="justify-end w-full mb-2.5 xl:mb-0"
         ref="pill"
       >
         <router-link
@@ -28,8 +27,8 @@
             ><span @click="navToggle" class="pl-2">{{ link.text }}</span
             ><i
               @click="navToggle"
-              class=" text-xl xl:hidden"
-              :class="link.icon"/></a
+              class="text-xl xl:hidden"
+              :class="link.icon" /></a
         ></router-link>
       </li>
     </ul>
@@ -49,7 +48,7 @@ export default {
     "background",
     "hoverBackground",
     "imagePath",
-    "linkColor"
+    "linkColor",
   ],
   methods: {
     toggleNav() {
@@ -67,8 +66,8 @@ export default {
       pill.contains("bg-primary")
         ? pill.remove("bg-primary")
         : pill.add("bg-primary");
-    }
-  }
+    },
+  },
 };
 </script>
 

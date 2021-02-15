@@ -23,9 +23,10 @@ module.exports = {
         floral: '#FFFAFO'
       },
       gray: colors.trueGray,
-      blue: colors.blueGray,
+      bluegray: colors.blueGray,
       red: colors.red,
-      green: colors.emerald
+      green: colors.emerald,
+      blue: colors.blue
     },
  
     extend:{
@@ -55,8 +56,9 @@ module.exports = {
 
   },
   variants: {
-          extend: {
-      }
+    extend: {
+      backgroundColor: ['active'],
+    }
   },
   plugins: [],
 }

@@ -1,10 +1,14 @@
 <template>
   <div>
-    <h1 class="text-3xl text-center py-4">Edit Project</h1>
-    <div class="py-4 mb-8">
-      <form action="" class="px-4 lg:px-20 xl:max-w-3/4">
-        <div class="shadow sm:rounded-md sm:overflow-hidden">
-          <div class="px-4 py-5 bg-White space-y-6 sm:p-6">
+    <h1
+      class="text-3xl text-center py-1 sticky inset-0 bg-White-ghost text-primary-dark"
+    >
+      Edit Project
+    </h1>
+    <div class="py-2 mb-8">
+      <form action="" class="px-6 lg:px-20 xl:max-w-3/4">
+        <div class="shadow-xl sm:rounded-md sm:overflow-hidden">
+          <div class="px-4 py-5 bg-White-powder space-y-6 sm:p-6">
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <label
@@ -57,14 +61,9 @@
                   class="block text-sm font-medium text-primary"
                   >Images</label
                 >
-                <div class="flex space-x-1.5 pt-4">
+                <div class="flex space-x-1.5 pt-2">
                   <div v-for="(image, index) in project.images" :key="index">
-                    <img
-                      :src="image"
-                      alt=""
-                      class="h-10"
-                      @click="remove(index)"
-                    />
+                    <img :src="image" alt="" class="h-10" />
                   </div>
                 </div>
               </div>
@@ -74,7 +73,7 @@
                   class="block text-sm font-medium text-primary"
                   >Cover Image</label
                 >
-                <div class="flex space-x-1.5 pt-4">
+                <div class="flex space-x-1.5 pt-2">
                   <img :src="project.cover_image" alt="" class="h-10" />
                 </div>
               </div>
@@ -100,24 +99,24 @@
                 />
               </div>
               <div class="flex space-x-4 col-span-6">
-                <button
+                <base-button
                   class="bg-primary px-4 py2 rounded-md"
                   @click="$refs.coverImage.click()"
                 >
                   Cover Image
-                </button>
-                <button
+                </base-button>
+                <base-button
                   class="bg-primary px-4 py2 rounded-md"
                   @click="$refs.fileInput.click()"
                 >
                   Project Images
-                </button>
-                <button
+                </base-button>
+                <base-button
                   class="bg-primary px-4 py2 rounded-md"
                   @click="onUpload"
                 >
                   Save
-                </button>
+                </base-button>
               </div>
             </div>
           </div>
